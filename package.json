@@ -1,0 +1,17 @@
+{
+  "name": "cf-listing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": "lib/index.js",
+  "scripts": {
+    "build": "coffee build.coffee"
+  },
+  "files": ["lib/*"],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "coffeescript": "^2.7.0"
+  }
+}
