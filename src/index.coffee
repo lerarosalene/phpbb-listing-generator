@@ -2,12 +2,7 @@ fs = require "node:fs/promises"
 path = require "node:path"
 
 EXT_REGEX = /\.[^\.]*$/g
-EXT_MAPPING = {
-  ".json": "JSON"
-  ".js": "JS"
-  ".scss": "CSS"
-  ".html": "HTML"
-}
+EXT_MAPPING = {}
 
 parseListing = (listing) ->
   listing
@@ -27,7 +22,7 @@ main = ->
   basedir = path.dirname path.resolve listingFile
   listing = await fs.readFile listingFile, "utf-8"
   files = parseListing listing
-  chunks = await Promise.all files.map (file) -> formatFile(path.join(basedir, file), spoilers)
+  chunks = await Promise.all files.map (file) -> formatFile(path.join(basedir, file))
   resultFile = "#{listingFile}.md" unless resultFile
   await fs.writeFile resultFile, chunks.join "\n\n"
 
