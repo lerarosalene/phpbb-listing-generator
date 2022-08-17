@@ -1,5 +1,8 @@
 # phpBB listing generator
 
+[![build](https://github.com/lerarosalene/phpbb-listing-generator/actions/workflows/build.yaml/badge.svg)](https://github.com/lerarosalene/phpbb-listing-generator/actions/workflows/build.yaml)
+
+
 Simple CLI utility that takes list of files (one file per line) and generates phpBB markup
 with their contents. It assumes availability of `[FIELDSET]` and `[CODE]` tags.
 
