@@ -15,17 +15,15 @@ parseListing = (listing) ->
     .map (i) -> i.trim()
     .filter (i) -> i.length
 
-formatFile = (file, spoiler) ->
+formatFile = (file) ->
   contents = await fs.readFile file, "utf-8"
   ext = file.match EXT_REGEX
   ext = file unless ext
   tag = EXT_MAPPING[ext] or "CODE"
-  outer = if spoiler then "SPOILER" else "FIELDSET"
-  return "[#{outer}=\"#{file}\"][#{tag}]#{contents}[/#{tag}][/#{outer}]"
+  return "[FIELDSET=\"#{file}\"][#{tag}]#{contents}[/#{tag}][/FIELDSET]"
 
 main = ->
   [listingFile, resultFile] = process.argv.slice 2
-  spoilers = process.env.CF_USE_SPOILERS and process.env.CF_USE_SPOILERS isnt "false"
   basedir = path.dirname path.resolve listingFile
   listing = await fs.readFile listingFile, "utf-8"
   files = parseListing listing

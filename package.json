@@ -1,9 +1,11 @@
 {
-  "name": "cf-listing",
+  "name": "phpbb-listing",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "bin": "lib/index.js",
+  "bin": {
+    "bb-listing": "lib/index.js"
+  },
   "scripts": {
     "build": "coffee build.coffee"
   },
