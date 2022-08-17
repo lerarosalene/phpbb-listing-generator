@@ -1,6 +1,6 @@
 {
   "name": "phpbb-listing",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "bin": {
@@ -9,7 +9,9 @@
   "scripts": {
     "build": "coffee build.coffee"
   },
-  "files": ["lib/*"],
+  "files": [
+    "lib/*"
+  ],
   "keywords": [],
   "author": "",
   "license": "ISC",
